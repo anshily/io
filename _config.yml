@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: anshily
 subtitle:
-description:
+description: 我带着书和诗，去寻找远方锋利的乳汁。
 keywords:
-author: John Doe
-language:
+author: 安石
+language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://anshily.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
