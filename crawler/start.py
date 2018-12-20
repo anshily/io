@@ -144,7 +144,7 @@ def crawlerAndStore(QQnum):
     # QQnum = target_qzone_uin
     tag = 1
     # QQname = numList[QQnum]
-    begin = 360
+    begin = 0
     first = 0
 
     myclient = pymongo.MongoClient(mongodb_address)
@@ -283,7 +283,7 @@ def get_single_emotion(QQnum,tid):
         emotion_title = emotion_title.split("天")[0]
     tags = msg_dict['content'][0]
     print(msg_dict['content'])
-    f_name = '_posts/' + tid + '.md'
+    f_name = '../source/_posts/' + tid + '.md'
     if os.path.exists(f_name):
         f = open(f_name, 'w')
     else:
