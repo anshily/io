@@ -147,9 +147,6 @@ def crawlerAndStore(QQnum):
     begin = 0
     first = 0
 
-    myclient = pymongo.MongoClient(mongodb_address)
-    mydb = myclient[mongodb_db_name]
-    col = mydb[mongodb_table_name]
     # 打开数据库连接
     # db = pymysql.connect("47.93.226.47","hang","hang!@#","ttq" )
 
