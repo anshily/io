@@ -18,7 +18,7 @@ import pymongo
 # schedule = sched.scheduler(time.time,time.sleep)
 target_qzone_uin = '1319589118'
 source_qzone_uin = '1926791261'
-source_qzone_password = 'hanghang***183367.'
+source_qzone_password = 'hanghang183367.'
 max_crawler_emotion_num = 1000
 
 g_qzonetoken = ''
@@ -26,6 +26,10 @@ gtk = ''
 driver = ''
 sleep_time = 600
 get_number_per_crawler = 60
+
+real_dir = os.path.dirname(os.path.realpath(__file__))
+# print(os.path.abspath(__file__))
+print(real_dir)
 
 def get_login_info():
 
@@ -43,7 +47,7 @@ def get_login_info():
     chrome_options = webdriver.ChromeOptions()
     # chrome_options.add_argument('--headless')
     # chrome_options.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(chrome_options=chrome_options, executable_path='chromedriver/chromedriver')
+    driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=real_dir+'/chromedriver/chromedriver')
 
     # driver = webdriver.PhantomJS(executable_path=r"phantomjs-2.1.1-macosx/bin/phantomjs")
     # driver = webdriver.PhantomJS(executable_path=r"/root/phantomjs-2.1.1-linux-x86_64/bin/phantomjs")
@@ -280,7 +284,7 @@ def get_single_emotion(QQnum,tid):
         emotion_title = emotion_title.split("天")[0]
     tags = msg_dict['content'][0]
     print(msg_dict['content'])
-    f_name = '../source/_posts/' + tid + '.md'
+    f_name = real_dir+'/../source/_posts/' + tid + '.md'
     if os.path.exists(f_name):
         f = open(f_name, 'w')
     else:
