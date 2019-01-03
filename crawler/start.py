@@ -11,6 +11,8 @@ import sched
 from sys import argv
 import configparser
 import os
+import ipfsapi
+
 
 # import pymysql
 import pymongo
@@ -292,6 +294,18 @@ def get_single_emotion(QQnum,tid):
         f = open(f_name, 'w')
     posts_content = 'title: poem'+ str(emotion_title) +'\ndate: '+ str(msg_dict['created_time']) +'000\ncategories: poem\ntags: '+ tags +'\n---\n> ' + msg_dict['content']
     f.write(posts_content)
+    f.close()
+    # time.sleep(1)
+    # show_echo = open(f_name,'r')
+    # print(show_echo.read())
+    print('add to ipfs...')
+    api = ipfsapi.connect('127.0.0.1', 5001)
+    res = api.add(f_name)
+    print(res)
+    print(api.cat(res['Hash']))
+    emotion_db = open('emotion_db','a+')
+    emotion_db.write(str(res)+'\n')
+    print('saved ipfs and append to emotion_db')
 
 get_login_info()
 fetch_loop()
