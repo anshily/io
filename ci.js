@@ -7,6 +7,9 @@ http.createServer(function (request, response) {
         if (error !== null) {
           console.log('exec error: ' + error);
         }
+        if (stdout !== null) {
+            console.log('exec stdout: ' + stdout);
+          }
     });
     // 发送 HTTP 头部 
     // HTTP 状态值: 200 : OK
