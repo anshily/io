@@ -2,6 +2,7 @@ var http = require('http');
 var process = require('child_process');
 
 http.createServer(function (request, response) {
+    // test
     console.log(request.data);
     process.exec('git pull',function (error, stdout, stderr) {
         if (error !== null) {
