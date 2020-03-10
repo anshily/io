@@ -288,10 +288,10 @@ def get_single_emotion(QQnum,tid):
     print(msg_dict['content'])
     f_name = real_dir+'/../source/_posts/' + tid + '.md'
     if os.path.exists(f_name):
-        f = open(f_name, 'w')
+        f = open(f_name, 'w', encoding='utf-8')
     else:
-        f = open(f_name, 'x')
-        f = open(f_name, 'w')
+        f = open(f_name, 'x', encoding='utf-8')
+        f = open(f_name, 'w', encoding='utf-8')
     posts_content = 'title: poem'+ str(emotion_title) +'\ndate: '+ str(msg_dict['created_time']) +'000\ncategories: poem\ntags: '+ tags +'\n---\n> ' + msg_dict['content']
     f.write(posts_content)
     f.close()
