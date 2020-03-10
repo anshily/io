@@ -14,7 +14,7 @@ timezone:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://anshily.github.io
-root: /ipns/QmcyShtUj1U7PgwDVTf9C68aiMbUPmifNAVhv5XdhXeLut/
+#root: /ipns/QmcyShtUj1U7PgwDVTf9C68aiMbUPmifNAVhv5XdhXeLut/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
